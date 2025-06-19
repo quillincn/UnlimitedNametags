@@ -24,8 +24,11 @@ jobs:
     - name: Build with Gradle  
       run: ./gradlew shadowJar  
       
+    - name: List target directory contents  
+      run: ls -la target/ || echo "Target directory not found"  
+      
     - name: Upload JAR artifact  
       uses: actions/upload-artifact@v4  
       with:  
-        name: UnlimitedNameTags  
-        path: target/UnlimitedNameTags.jar
+        name: UnlimitedNametags  
+        path: target/UnlimitedNametags.jar
